@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'activity.g.dart';
+
+@JsonSerializable()
 class Activity {
   final int id;
   final DateTime start;
@@ -22,4 +27,7 @@ class Activity {
     this.people,
     this.event,
   );
+
+  factory Activity.fromJson(Map<String, dynamic> json) =>
+      _$ActivityFromJson(json);
 }
