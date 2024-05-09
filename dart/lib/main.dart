@@ -1,3 +1,4 @@
+import 'package:chuva_dart/providers/activity_provider.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -40,6 +41,7 @@ class _CalendarState extends State<Calendar> {
 
   @override
   Widget build(BuildContext context) {
+    ActivityProvider().fetchAllActivities();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -112,6 +114,8 @@ class _ActivityState extends State<Activity> {
 
   @override
   Widget build(BuildContext context) {
+    ActivityProvider().fetchAllActivities();
+
     return Container(
       color: Theme.of(context).colorScheme.inversePrimary,
       child: Column(children: [
