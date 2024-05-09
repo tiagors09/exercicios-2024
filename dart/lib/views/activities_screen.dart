@@ -1,3 +1,4 @@
+import 'package:chuva_dart/widgets/activities_list.dart';
 import 'package:flutter/material.dart';
 
 class ActivitiesScreen extends StatefulWidget {
@@ -31,6 +32,7 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
           ],
         ),
       ),
+      body: const ActivitiesList(),
     );
   }
 }
