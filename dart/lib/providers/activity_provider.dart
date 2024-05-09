@@ -15,7 +15,7 @@ class ActivityProvider with ChangeNotifier {
   List<Activity> get activities => [..._activities];
   int get activitiesCount => _activities.length;
   int get totalActivitiesCount => _totalActivitiesCount;
-  String get nextLink => _links['next'].toString();
+  String? get nextLink => _links['next'].toString();
 
   Future<void> fetchAllActivities() async {
     try {
