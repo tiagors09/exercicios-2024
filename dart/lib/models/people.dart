@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'people.g.dart';
+
+@JsonSerializable()
 class People {
   final int id;
   final String title;
@@ -16,4 +21,6 @@ class People {
     this.picture,
     this.role,
   );
+
+  factory People.fromJson(Map<String, dynamic> json) => _$PeopleFromJson(json);
 }
