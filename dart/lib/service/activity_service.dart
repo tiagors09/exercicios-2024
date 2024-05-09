@@ -8,9 +8,9 @@ class ActivityService {
   final _dio = Dio();
   final _baseUrl = Environment.baseUrl;
 
-  Future<Map<String, dynamic>> fetchActivities() async {
+  Future<Map<String, dynamic>> fetchActivities(String? url) async {
     try {
-      final response = await _dio.get(_baseUrl);
+      final response = await _dio.get(url ?? _baseUrl);
 
       final Map<String, dynamic> data = jsonDecode(response.data) ?? {};
 
