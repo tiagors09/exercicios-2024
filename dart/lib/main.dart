@@ -1,4 +1,5 @@
 import 'package:chuva_dart/providers/activity_provider.dart';
+import 'package:chuva_dart/views/activities_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -16,20 +17,13 @@ class ChuvaDart extends StatelessWidget {
       routes: [
         GoRoute(
           path: '/',
-          builder: (ctx, st) => const Scaffold(
-            body: Placeholder(),
-          ),
+          builder: (ctx, st) => const ActivitiesScreen(),
         ),
       ],
     );
 
     return ChangeNotifierProvider(
-      create: (ctx) {
-        final activityProvider = ActivityProvider();
-        activityProvider.fetchAllActivities();
-
-        return activityProvider;
-      },
+      create: (ctx) => ActivityProvider(),
       child: MaterialApp.router(
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
